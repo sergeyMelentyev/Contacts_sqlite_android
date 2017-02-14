@@ -12,7 +12,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //callDataBase();
+    }
 
+    void callDataBase() {
         SQLiteDatabase db = getBaseContext().openOrCreateDatabase("data.db", MODE_PRIVATE, null);
         db.execSQL("DROP TABLE IF EXISTS contacts;");
         db.execSQL("CREATE TABLE contacts(name TEXT, phone INTEGER, email TEXT);");
